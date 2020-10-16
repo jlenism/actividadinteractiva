@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "actividadinteractiva"
+    }
+  },
+  "defaultProject": "actividadinteractiva",
+  "cli": {
+    "analytics": false
+  }
 }
