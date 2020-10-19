@@ -32,6 +32,7 @@ export class AppComponent {
   mario3: boolean;
   mario4: boolean;
   mario5: boolean;
+  mario6: boolean;
 
   sonidoCorrecto() {
     this.intentos = 3;
@@ -63,6 +64,10 @@ export class AppComponent {
       audioIncorrecto.play();
     }
   }
+  sonidoVida() {
+    const audioVida = new Audio('assets/mario-brosvida.mp3');
+    audioVida.play();
+  }
 
   iniciar() {
     this.inicio = false;
@@ -74,15 +79,14 @@ export class AppComponent {
   }
 
   primariosSi() {
-    //setTimeout(() => {
       this.mario1 = true;
       this.a = false;
+      this.sonidoVida();
       setTimeout(() => {
         this.mario1 = false;
         this.b = true;
         this.sonidoCorrecto();
-      }, 3000);
-    //}, 2000);
+      }, 1500);
     // Ejecutar sonido de todo bien
     // Mostrar anuncio con muñeco
   }
@@ -94,15 +98,14 @@ export class AppComponent {
   }
 
   resuelveSi() {
-    setTimeout(() => {
-      this.mario2 = true;
-    }, 2000);
-    this.mario2 = false;
+    this.mario2 = true;
     this.b = false;
-    this.c = true;
-    // Ejecutar sonido de todo bien
-    this.sonidoCorrecto();
-    // Mostrar anuncio con muñeco    
+    this.sonidoVida();
+    setTimeout(() => {
+      this.mario2 = false;
+      this.c = true;
+      this.sonidoCorrecto();
+    }, 1500);
   }
 
   resuelveNo() {
@@ -113,14 +116,14 @@ export class AppComponent {
   }
 
   colorCorrecto1() {
-    setTimeout(() => {
-      this.mario3 = true;
-    }, 2000);
-    this.mario3 = false;
+    this.mario3 = true;
     this.c = false;
-    this.d = true;
-    // Ejecutar sonido de todo bien
-    this.sonidoCorrecto();
+    this.sonidoVida();
+    setTimeout(() => {
+      this.mario3 = false;
+      this.d = true;
+      this.sonidoCorrecto();
+    }, 1500);
   }
 
   colorCorrecto2() {
@@ -159,14 +162,14 @@ export class AppComponent {
   }
 
   numeroCorrecto1() {
-    setTimeout(() => {
-      this.mario4 = true;
-    }, 2000);
-    this.mario4 = false;
+    this.mario4 = true;
     this.f = false;
-    this.f1 = true;
-    // Reproducir sonido de error
-    this.sonidoCorrecto();
+    this.sonidoVida();
+    setTimeout(() => {
+      this.mario4 = false;
+      this.f1 = true;
+      this.sonidoCorrecto();
+    }, 1500);
   }
 
   numeroCorrecto2() {
@@ -191,10 +194,14 @@ export class AppComponent {
   }
 
   numeroCorrecto5() {
+    this.mario5 = true;
     this.f4 = false;
-    this.f5 = true;
-    // Reproducir sonido de error
-    this.sonidoCorrecto();
+    this.sonidoVida();
+    setTimeout(() => {
+      this.mario5 = false;
+      this.f5 = true;
+      this.sonidoCorrecto();
+    }, 1500);
   }
 
   numeroCorrecto6() {
@@ -226,13 +233,13 @@ export class AppComponent {
   }
 
   numeroCorrecto10() {
-    setTimeout(() => {
-      this.mario1 = true;
-    }, 2000);
-    this.mario1 = false;
+    this.mario6 = true;
     this.f9 = false;
-    this.f10 = true;
-    // Reproducir sonido de error
-    this.sonidoVictoria();
+    this.sonidoVida();
+    setTimeout(() => {
+      this.mario6 = false;
+      this.f10 = true;
+      this.sonidoVictoria();
+    }, 3000);
   }
 }

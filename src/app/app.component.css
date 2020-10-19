@@ -77,3 +77,14 @@
     text-transform:uppercase;
     padding:1em 1.5em;
 }
+
+.buttonRestart{
+    position: absolute;
+    bottom:4em;
+    right:4em;
+    background-color:rgb(159, 14, 255);
+    border-radius:1.5em;
+    color:white;
+    text-transform:uppercase;
+    padding:1em 1.5em;
+}
