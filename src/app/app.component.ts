@@ -27,6 +27,11 @@ export class AppComponent {
 
   intentos: number = 3;
   puntos: number = 0;
+  mario1: boolean;
+  mario2: boolean;
+  mario3: boolean;
+  mario4: boolean;
+  mario5: boolean;
 
   sonidoCorrecto() {
     this.intentos = 3;
@@ -48,9 +53,8 @@ export class AppComponent {
       const audioPerder = new Audio('assets/gameover.mp3');
       audioPerder.play();
       console.log('if intentos es 0');
-      
-    } else {      
-      if (this.puntos > 0) {      
+    } else {
+      if (this.puntos > 0) {
         this.puntos = this.puntos - 1;
       } else {
         this.puntos = 0;
@@ -68,12 +72,18 @@ export class AppComponent {
   reiniciar() {
     window.location.reload();
   }
- 
+
   primariosSi() {
-    this.a = false;
-    this.b = true;
+    //setTimeout(() => {
+      this.mario1 = true;
+      this.a = false;
+      setTimeout(() => {
+        this.mario1 = false;
+        this.b = true;
+        this.sonidoCorrecto();
+      }, 3000);
+    //}, 2000);
     // Ejecutar sonido de todo bien
-    this.sonidoCorrecto();
     // Mostrar anuncio con muñeco
   }
 
@@ -84,6 +94,10 @@ export class AppComponent {
   }
 
   resuelveSi() {
+    setTimeout(() => {
+      this.mario2 = true;
+    }, 2000);
+    this.mario2 = false;
     this.b = false;
     this.c = true;
     // Ejecutar sonido de todo bien
@@ -95,10 +109,14 @@ export class AppComponent {
     // Reproducir sonido de error
     this.sonidoIncorrecto();
     // Mostrar anuncio con muñeco
-    
+
   }
 
   colorCorrecto1() {
+    setTimeout(() => {
+      this.mario3 = true;
+    }, 2000);
+    this.mario3 = false;
     this.c = false;
     this.d = true;
     // Ejecutar sonido de todo bien
@@ -114,98 +132,107 @@ export class AppComponent {
 
   colorCorrecto3() {
     this.e = false;
-    this.f = true;   
+    this.f = true;
     // Ejecutar sonido de todo bien
-    this.sonidoCorrecto(); 
+    this.sonidoCorrecto();
   }
 
   colorIncorrecto1() {
     // Reproducir sonido de error
-    this.sonidoIncorrecto();    
+    this.sonidoIncorrecto();
   }
 
   colorIncorrecto2() {
     // Reproducir sonido de error
-    this.sonidoIncorrecto();    
+    this.sonidoIncorrecto();
   }
 
   colorIncorrecto3() {
     // Reproducir sonido de error
-    this.sonidoIncorrecto();    
+    this.sonidoIncorrecto();
   }
 
+  // tslint:disable-next-line: typedef
   numeroIncorrecto() {
     // Reproducir sonido de error
-    this.sonidoIncorrecto();    
+    this.sonidoIncorrecto();
   }
 
   numeroCorrecto1() {
+    setTimeout(() => {
+      this.mario4 = true;
+    }, 2000);
+    this.mario4 = false;
     this.f = false;
     this.f1 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto2() {
     this.f1 = false;
     this.f2 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto3() {
     this.f2 = false;
     this.f3 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto4() {
     this.f3 = false;
     this.f4 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto5() {
     this.f4 = false;
     this.f5 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto6() {
     this.f5 = false;
     this.f6 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto7() {
     this.f6 = false;
     this.f7 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto8() {
     this.f7 = false;
     this.f8 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto9() {
     this.f8 = false;
     this.f9 = true;
     // Reproducir sonido de error
-    this.sonidoCorrecto();    
+    this.sonidoCorrecto();
   }
 
   numeroCorrecto10() {
+    setTimeout(() => {
+      this.mario1 = true;
+    }, 2000);
+    this.mario1 = false;
     this.f9 = false;
     this.f10 = true;
     // Reproducir sonido de error
-    this.sonidoVictoria();    
+    this.sonidoVictoria();
   }
 }
